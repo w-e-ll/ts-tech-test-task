@@ -59,4 +59,5 @@ TODO::
     $ Fix init_db.py - missing dependency
     $ Make more tests
     $ Add type checking
+    $ Add Bootstrap
     $ Fix some errors
