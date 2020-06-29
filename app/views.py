@@ -34,8 +34,6 @@ async def post_data(request):
 				if data:
 					await asyncio.sleep(10)
 					raise redirect(request.app.router, 'success')
-					await asyncio.sleep(10)
-					raise redirect(request.app.router, 'index')
 	return {}
 
 
