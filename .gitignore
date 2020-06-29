@@ -9,7 +9,7 @@ __pycache__/
 
 .idea/*
 app.egg-info/*
-
+venv/*
 # Distribution / packaging
 .Python
 build/
