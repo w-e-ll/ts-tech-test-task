@@ -1,6 +1,0 @@
-aiohttp
-aiohttp-jinja2
-sqlalchemy
-aiomysql
-Jinja2
-PyYAML
