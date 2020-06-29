@@ -1,0 +1,23 @@
+<!--app/templates/post_data.html-->
+{% extends "base.html" %}
+
+{% set title = "Post Your Data" %}
+
+{% block content %}
+
+    <h1>Please, add information.</h1>
+
+    <form action="/post/" method="post">
+        <p>
+            <input id="name" name="name" type="text" value="" size=200 autofocus/>
+        </p>
+        <p>
+            <input id="city" name="city" type="text" value="" size=200 autofocus/>
+        </p>
+        <p>
+            <input id="age" name="age" type="number" value="" size=40 autofocus/>
+        </p>
+        <input type="submit" value="submit"/>
+    </form>
+
+{% endblock %}

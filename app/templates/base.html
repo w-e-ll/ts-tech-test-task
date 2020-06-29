@@ -1,0 +1,29 @@
+<!--app/templates/base.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+        <link rel="stylesheet" type="text/css"
+              href="{{ url('static', filename='style.css') }}" />
+              <title>Welcome to Terminal TestTask</title>
+    {% endblock %}
+  </head>
+  <body>
+      {% if title %}
+        <h1>{{ title }}</h1>
+      {% else %}
+        <h1>Welcome to Terminal TestTask</h1>
+      {% endif %}
+    <hr>
+    <div>
+      TerminalData:
+      <a href="{{ url('index') }}">Get</a>
+      <a href="{{ url('post-data') }}">Post</a>
+    </div>
+    <hr>
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
