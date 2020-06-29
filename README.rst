@@ -1,75 +1,46 @@
-Polls
-=====
+# GitHub Terminal API
 
-Example of polls project using aiohttp_, aiopg_ and aiohttp_jinja2_,
-similar to Django one.
+[Task]:
+Написать простенький аппликейшн, который будет представлять упрощенную версию терминала для обработки внесенных пользователем данных.
+На вход с клиента поступает некая последовательность данных от пользователя, напр.
+{"name": "Bob";
+"age": 27;
+"city": "Oakland";
+}
+Сервер обязан последовательность получить, сохранить в бд и с задержкой в 10 сек вернуть ответ клиенту о том, что данные сохранены и обработаны.
+Необходимо реализовать как серверную часть, так и интерфейс который будет находиться на клиенте- это можно сделать в упрощенной форме, достаточно несколько простых форм без сложных стилей.
 
+Использовать python3, aiohttp, mysql, sqlalchemy.core (без ORM)
+Код разместить на гит. репозитории
 
-Preparations
-------------
+### How to run
+```
+$ git clone https://github.com/w-e-ll/ts-tech-test-task.git
 
-Details could be found in `Preparations <https://github.com/aio-libs/aiohttp-demos/blob/master/docs/preparations.rst#environment>`_.
+$ cd ts-tech-test-task
+```
+Create a virtualenv to isolate our package dependencies locally
+```
+$ virtualenv -p python3.8 venv
 
-In short.
+$ source venv/bin/activate
+```
+Install requirements
+```
+$ pip install -r requirements.txt
 
-Run Postgres DB server::
-
-    $ docker run --rm -it -p 5432:5432 postgres:10
-
-Create db and populate it with sample data::
-
-    $ python init_db.py
-
-
-Run
----
-Run application::
-
-    $ python -m aiohttpdemo_polls
-
-Open browser::
-
-    http://localhost:8080/
-
-.. image:: https://raw.githubusercontent.com/aio-libs/aiohttp-demos/master/docs/_static/polls.png
-    :align: center
-    :width: 460px
-
-Tests
------
-
-.. code-block:: shell
-
-    $ pytest tests
-
-or:
-
-.. code-block:: shell
-
-    $ pip install tox
-    $ tox
-
-
-Development
------------
-Please review general contribution info at `README <https://github.com/aio-libs/aiohttp-demos#contributing>`_.
-
-
-Also for illustration purposes it is useful to show project structure when it changes,
-like `here <https://github.com/aio-libs/aiohttp-demos/blob/master/docs/preparations.rst#project-structure>`_.
-Here is how you can do that::
-
-    $ tree -I "__pycache__|aiohttpdemo_polls.egg-info" --dirsfirst
-
-
-Requirements
-============
-* aiohttp_
-* aiopg_
-* aiohttp_jinja2_
-
-
-.. _Python: https://www.python.org
-.. _aiohttp: https://github.com/aio-libs/aiohttp
-.. _aiopg: https://github.com/aio-libs/aiopg
-.. _aiohttp_jinja2: https://github.com/aio-libs/aiohttp_jinja2
+```
+Run script to fill the db
+```
+$ python init_db.py
+# пока не работает - ошибка с зависимостью (не могу найти решение), по
+этому и затянул - вчера еще все работало)
+```
+Run the server
+```
+$ python app/main.py
+```
+Открыть в браузере:
+```
+http://127.0.0.1:8080/post/ - добавить данные
+http://127.0.0.1:8080/ - просмотреть данные после добавления
