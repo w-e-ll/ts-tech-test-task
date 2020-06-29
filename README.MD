@@ -47,7 +47,8 @@ Run tests::
 
     $ pytest tests/test_integration.py
     
-ToDo::
+TODO::
+=======
 
     $ Dockerize App
     $ Fix init_db.py - missing dependency
