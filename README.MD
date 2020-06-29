@@ -5,6 +5,11 @@ Clone the repo, create virtualenv if necessary.
 
 Operate from base folder [../terminal].
 
+    $ sudo pip install virtualenv
+    $ virtualenv -p python3.8 venv
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt
+
 To start the demo application you need running MySQL server.
 In case you have it already - good.
 
